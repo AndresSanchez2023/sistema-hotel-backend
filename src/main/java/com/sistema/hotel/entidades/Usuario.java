@@ -32,6 +32,9 @@ public class Usuario implements UserDetails {
     @JsonIgnore
     private Set<UsuarioRol> usuarioRoles = new HashSet<>();
 
+    @OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonIgnore
+    private Set<Reserva> reservasUsuario = new HashSet<>();
     public Long getId() {
         return id;
     }
@@ -142,6 +145,14 @@ public class Usuario implements UserDetails {
 
     public void setUsuarioRoles(Set<UsuarioRol> usuarioRoles) {
         this.usuarioRoles = usuarioRoles;
+    }
+
+    public Set<Reserva> getReservasUsuario() {
+        return reservasUsuario;
+    }
+
+    public void setReservasUsuario(Set<Reserva> reservasUsuario) {
+        this.reservasUsuario = reservasUsuario;
     }
 
     public Usuario() {
