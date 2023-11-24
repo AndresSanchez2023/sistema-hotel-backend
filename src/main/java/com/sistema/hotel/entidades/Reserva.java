@@ -11,9 +11,9 @@ public class Reserva {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reservaId;
-
+    @Temporal(TemporalType.DATE)
     private Date fechaInicio;
-
+    @Temporal(TemporalType.DATE)
     private Date fechaFin;
 
     private float costoTotal;

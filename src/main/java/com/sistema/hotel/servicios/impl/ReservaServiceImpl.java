@@ -2,6 +2,7 @@ package com.sistema.hotel.servicios.impl;
 
 import com.sistema.hotel.entidades.Habitacion;
 import com.sistema.hotel.entidades.Reserva;
+import com.sistema.hotel.repositorios.HabitacionRepository;
 import com.sistema.hotel.repositorios.ReservaRepository;
 import com.sistema.hotel.servicios.ReservaService;
 import org.springframework.beans.factory.annotation.Autowired;

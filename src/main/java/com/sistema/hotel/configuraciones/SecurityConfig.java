@@ -52,7 +52,9 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authRequest ->
                         authRequest
-                                .requestMatchers("/generate-token","/usuarios/").permitAll()
+                                .requestMatchers("/generate-token","/usuarios/","/tipoHabitacion/",
+                                        "/tipoHabitacion/{tipoHabitacionId}",
+                                        "habitacion/disponibilidad").permitAll()
                                 .requestMatchers(HttpMethod.OPTIONS).permitAll()
                                 .anyRequest().authenticated()
                 )

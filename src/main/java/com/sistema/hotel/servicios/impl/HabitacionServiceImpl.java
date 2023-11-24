@@ -1,12 +1,15 @@
 package com.sistema.hotel.servicios.impl;
 
 import com.sistema.hotel.entidades.Habitacion;
+import com.sistema.hotel.entidades.TipoHabitacion;
 import com.sistema.hotel.repositorios.HabitacionRepository;
 import com.sistema.hotel.servicios.HabitacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -41,5 +44,9 @@ public class HabitacionServiceImpl implements HabitacionService {
         if (habitacion != null) {
             habitacionRepository.delete(habitacion);
         }
+    }
+    @Override
+    public List<Habitacion> verificarDisponibilidad(Date fechaInicio, Date fechaFin, Long tipoHabitacionId) {
+        return habitacionRepository.findDisponiblesByTipoYFechas(tipoHabitacionId, fechaInicio, fechaFin);
     }
 }

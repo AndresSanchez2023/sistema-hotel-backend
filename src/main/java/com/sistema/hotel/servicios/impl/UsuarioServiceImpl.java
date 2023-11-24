@@ -43,6 +43,11 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
+    public Usuario obtenerUsuarioPorId(Long usuarioId) {
+        return usuarioRepository.findById(usuarioId).get();
+    }
+
+    @Override
     public void eliminarUsuario(Long usuarioId) {
         usuarioRepository.deleteById(usuarioId);
     }

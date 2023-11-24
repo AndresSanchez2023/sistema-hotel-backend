@@ -13,6 +13,8 @@ public interface UsuarioService {
 
     public Usuario obtenerUsuario(String Username);
 
+    public Usuario obtenerUsuarioPorId(Long usuarioId);
+
     public void eliminarUsuario(Long usuarioId);
 
 }
